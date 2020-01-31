@@ -1,4 +1,4 @@
-# Using Python to Interact with the Operating System - Week 1
+# Using Python to Interact with the Operating System-Week 1
 
 ## Course prerequisites
 This course builds upon the contents taught in the introduction to Python course:
