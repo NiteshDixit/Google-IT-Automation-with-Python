@@ -1,0 +1,82 @@
+file = open('spider.txt')
+print(file.readline())
+print(file.read())
+file.close()
+-----------------------------------
+with open("spider.txt") as file:
+print(file.readline())
+-----------------------------------
+with open("spider.txt") as file:
+for line in file:
+print(line.strip().upper())
+-------------------------------------
+file = open('spider.txt')
+lines = file.readlines()
+file.close()
+lines.sort()
+print(lines)
+--------------------------------
+with open("novel.txt","w") as file:     
+file.write("it is sunny day")
+
+Note: W - Write
+      a - append
+      r+ - Rean and Write
+-------------------------------------
+import os
+os.remove("novel.txt")
+os.path.exist("first_name.txt")
+os.rename("fisrt_name.txt","final_name.txt")
+os.path.getsize("final_name.txt")
+os.patch.gettime("final_name.txt")
+os.path.abspath("final_name.txt")
+print(os.getcwd())
+os.mkdir("newdir")
+os.chdir(""newdir")
+os.getcwd()
+os.listdir("newdir")
+os.rmdir("newdir")
+------------------------------------------
+import datetime
+timestamp = os.path.gettime("final_name.txt")
+datetime.datetime.fromtimestamp(timestamp)
+-----------------------------------------
+import os
+os.listdir("website")
+dir = "website"
+for name in os.listdir(dir)
+fullname = os.path.join(dir, name)
+if os.path.isdir(fullname):
+print("{} is a directory". format(fullname))
+else:
+print("{} is a file". format(fullname))
+-----------------------------------------------
+import csv
+f = open("csv.txt")
+csv_f = csv.reader(f)
+for row in csv_f:
+name, phone, role = row
+    print("Name: {}, Phone: {}, Role: {}".format(name, phone, role))
+f.close()
+------------------------------------------------------
+hosts = [["host1", "1.2.3.4"],["host2","5.6.7.8"]]
+with open ("hosts.csv", "w") as hosts_csv:
+      writer = csv.writer(hosts_csv)
+      writer.writerows(hosts)   
+--------------------------------------------
+with open ("software.csv") as software:
+       reader = csv.DictReader(software)
+    for row in reader:
+        print("{} has {} users".format(row["name"], row["users"]))
+-----------------------------------------------------------------------------------
+users = [{"name": "Sol Mansi", "username": "solm", "department": "IT infrastructure"},
+{"name": "Lio Nelson", "username": "lion", "department": "User Experience Research"},
+{"name": "Charlie Grey", "username": "greyc", "department": "Development" }]
+
+keys = ["name", "username", "department"]
+
+with open("by_department.csv", "w") as by_department:
+    writer = csv.DictWriter(by_department, fieldnames=keys)
+    writer.writeheader()
+    writer.writerows(users)
+
